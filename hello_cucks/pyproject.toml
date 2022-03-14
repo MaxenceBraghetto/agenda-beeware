@@ -1,0 +1,48 @@
+[tool.briefcase]
+project_name = "hello cucks"
+bundle = "based.gov"
+version = "0.0.1"
+url = "https://gov.based/hellocucks"
+license = "GNU General Public License v3 or later (GPLv3+)"
+author = 'brad chadcel'
+author_email = "brad@gov.based"
+
+[tool.briefcase.app.hellocucks]
+formal_name = "hello cucks"
+description = "it prints a nice hello to cucks across the globe"
+icon = "src/hellocucks/resources/hellocucks"
+sources = ['src/hellocucks']
+requires = ['git+https://github.com/beeware/toga-chart.git','pandas','toga','matplotlib']
+
+[tool.briefcase.app.hellocucks.macOS]
+requires = [
+    'toga-cocoa>=0.3.0.dev20',
+]
+
+[tool.briefcase.app.hellocucks.linux]
+requires = [
+    'toga-gtk>=0.3.0.dev20',
+]
+system_requires = [
+    'libgirepository1.0-dev',
+    'libcairo2-dev',
+    'libpango1.0-dev',
+    'libwebkitgtk-3.0-0',
+    'gir1.2-webkit-3.0',
+]
+
+[tool.briefcase.app.hellocucks.windows]
+requires = [
+    'toga-winforms>=0.3.0.dev20',
+]
+
+# Mobile deployments
+[tool.briefcase.app.hellocucks.iOS]
+requires = [
+    'toga-iOS>=0.3.0.dev20',
+]
+
+[tool.briefcase.app.hellocucks.android]
+requires = [
+    'toga-android>=0.3.0.dev20',
+]
